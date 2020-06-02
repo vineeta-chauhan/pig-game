@@ -18,7 +18,6 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
         console.log(dice1 +"==============");
         console .log(dice2+ "***********");
 
-
         //3. Update the round score IF the rolled number was NOT a 1
 
         if (dice1 !== 1 && dice2 !== 1) {
@@ -27,7 +26,12 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
             document.querySelector('#current-' + activePlayer).textContent = roundScore;
         } else {
             //Next player
-            nextPlayer();
+            //nextPlayer();
+            document.querySelector('.btn-roll').setAttribute('disabled', 'true');
+
+            setTimeout(nextPlayer, 2000);
+
+
         }
 
         /*if (lastDice === 6 && dice === 6) {
